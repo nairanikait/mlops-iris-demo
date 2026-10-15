@@ -1,8 +1,8 @@
+
 pipeline {
     agent any
 
     stages {
-
         stage('Checkout') {
             steps {
                 git branch: 'main',
@@ -24,7 +24,8 @@ pipeline {
 
         stage('Deploy Model') {
             steps {
-                sh 'cp iris_model.pkl /home/nairanikait7/app/'
+                sh 'cp iris_model.pkl /opt/mlops-model/iris_model.pkl'
+                sh 'ls -lh /opt/mlops-model/iris_model.pkl'
             }
         }
     }
